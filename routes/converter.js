@@ -47,9 +47,12 @@ function convertRomanToArabic(digits) {
   return result;
 }
 
+router.get('/', function (req, res, next) {
+  return res.status(200).json({ "digit": 0 });
+});
 
 /* GET converter */
-router.get('/:romanDigit', function (req, res, next) {
+router.get('/:romanDigit?', function (req, res, next) {
   let arabicDigit = convertRomanToArabic(req.params.romanDigit);
   return res.status(200).json({ "digit": arabicDigit });
 });
