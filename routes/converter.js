@@ -36,7 +36,6 @@ function convertRomanToArabic(digits) {
   romanMap.set("M", 1000);
   romanMap.set("MM", 2000);
   romanMap.set("MMM", 3000);
-  romanMap.set("MMMM", 4000);
   let romanDigits = digits.match(regex);
   if (romanDigits) {
     romanDigits.shift();

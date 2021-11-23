@@ -235,22 +235,22 @@ describe('Server', () => {
         .end((error) => (error) ? done.fail(error) : done());
     });
 
-    it('Get /converter/MMMM Response : { "digit" : 4000 }', (done) => {
-      request(app)
-        .get('/converter/MMMM')
-        .expect(200)
-        .expect((response) => {
-          expect(response.body.digit).toEqual(4000);
-        })
-        .end((error) => (error) ? done.fail(error) : done());
-    });
-
     it('Get /converter/MCCXXXVIII Response : { "digit" : 1238 }', (done) => {
       request(app)
         .get('/converter/MCCXXXVIII')
         .expect(200)
         .expect((response) => {
           expect(response.body.digit).toEqual(1238);
+        })
+        .end((error) => (error) ? done.fail(error) : done());
+    });
+
+    it('Get /converter/MMMCMXCIX Response : { "digit" : 3999 }', (done) => {
+      request(app)
+        .get('/converter/MMMCMXCIX')
+        .expect(200)
+        .expect((response) => {
+          expect(response.body.digit).toEqual(3999);
         })
         .end((error) => (error) ? done.fail(error) : done());
     });
